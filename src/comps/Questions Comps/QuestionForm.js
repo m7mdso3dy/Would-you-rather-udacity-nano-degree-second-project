@@ -61,7 +61,7 @@ const QuestionForm = props => {
             newQuestionId: newId,
             userId: authedUser
         }));
-        navigate('/')
+        navigate('/');
     }
     return (
         <Fragment>

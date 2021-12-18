@@ -4,9 +4,8 @@ import { useSelector } from "react-redux";
 import UserCard from './UserCard'
 const LeaderBoredUsers = props => {
     const users = Object.values(useSelector(state => state.users));
-    const content = users.sort((a, b) => parseFloat(Object.keys(b.answers).length + b.questions.length) - parseFloat(Object.keys(a.answers).length + a.questions.length)  ).
-        
-        map(user => {
+    const content = users.sort((a, b) => parseFloat(Object.keys(b.answers).length + b.questions.length) - parseFloat(Object.keys(a.answers).length + a.questions.length))
+        .map(user => {
         return (
             <UserCard
                 className='mx-4 col-lg-3 col-md-6 col-sm-12 py-2'
