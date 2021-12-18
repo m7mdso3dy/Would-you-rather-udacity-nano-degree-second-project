@@ -14,7 +14,7 @@ const UnAnswered = props => {
         const imgUrl = users[question.author].avatarURL
         return (
             <QuestionCard
-                className='mx-4 col-lg-3 col-md-6 col-sm-12'
+                className='mx-4 col-lg-3 col-md-6 col-sm-12 py-2'
                 key={question.id}
                 id={question.id}
                 optionOne={question.optionOne.text}

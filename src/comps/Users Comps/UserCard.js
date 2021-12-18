@@ -4,10 +4,10 @@ const UserCard = props => {
         <Card className={props.className} >
             <Card.Img variant="top" src={ props.imgUrl} />
             <Card.Body>
-                <Card.Title>Total Score : {props.total} </Card.Title>
+                <Card.Title> {props.Title} </Card.Title>
                 <Card.Text>
+                    Total Score : {props.total} <br />
                     Answered Questions : {props.numAnswered} <br />
-                    or <br />
                     Created Questions : {props.numCreated}
                 </Card.Text>
             </Card.Body>
