@@ -52,7 +52,7 @@ function App() {
           (authedUser && <QuestionDetail></QuestionDetail>) ||
           (!authedUser &&  <Navigate to='/login'></Navigate>)
         } ></Route>
-        <Route path='/leaderBored' element={
+        <Route path='/leaderboard' element={
           (authedUser && <LeaderBored></LeaderBored>) ||
           (!authedUser &&  <Navigate to='/login'></Navigate>)
         } ></Route>
