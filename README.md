@@ -11,7 +11,10 @@ cd to the folder you stored your project at
 Run npm install to install all dependencies.
 then Run npm start to start the project running on port 3000 (if 3000 is not taken by anthor service).
 
-Quich setup : 1. download project or clone the repo 2. cd the project folder 3. run npm install 4. run npm start
+Quich setup : 
+1. download project or clone the repo 
+2. cd the project folder 
+3. run npm install 4. run npm start
 
 More details :
 this project was created using :
@@ -20,12 +23,8 @@ react-router-dom v6
 react-redux & reduxJs/toolkit
 react-bootstrap, bootstrap & bootstrap-icons for ui construction.
 
-                                                            this was a good practise to react, redux/toolkit, react-router-dom v6 and last but not least learning react-bootStrap that was a real life savior in ui construction.
-
-
-
-
-
-
-
-                                                                            hope you enjoy it as i did.
+this was a good practise to 
+react, redux/toolkit, react-router-dom v6 
+and last but not least learning react-bootStrap that was a real life savior in ui construction.
+                                                                
+                                                                hope you enjoy it as i did.
