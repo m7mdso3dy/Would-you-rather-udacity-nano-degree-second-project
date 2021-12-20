@@ -18,10 +18,6 @@ then Run npm start to start the project running on port 3000 (if 3000 is not tak
 
 you need to have node package manger installed and then run npm install
 
-```
-Give examples
-```
-
 ### Quick setup
 
 1. download project or clone the repo
@@ -39,10 +35,6 @@ Give examples
 ## Authors
 
 - **Mohammed Soudy** - _Initial work_ - [M7mdSo3dy](https://github.com/m7mdso3dy)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
