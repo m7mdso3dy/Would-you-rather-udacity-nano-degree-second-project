@@ -47,7 +47,7 @@ const QuestionForm = props => {
         dispatch(questionsActions.addNewQuestion({
             id: newId,
             author: authedUser,
-            timestamp: 1000,
+            timestamp: Date.now(),
             optionOne: {
                 votes: [],
                 text: optionOneRef.current.value

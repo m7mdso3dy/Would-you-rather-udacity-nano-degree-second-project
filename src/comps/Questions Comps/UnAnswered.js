@@ -8,7 +8,9 @@ const UnAnswered = props => {
     const authedUser = useSelector(state => state.authedUser);
     const authedUsersAnsweredQuestions = users[authedUser.authedUser].answers;
     const questionsArray = Object.values(questions);
-    const content = questionsArray.filter(question => !!authedUsersAnsweredQuestions[question.id] === false ).map(question => {
+    const content = questionsArray.filter(question => !!authedUsersAnsweredQuestions[question.id] === false)
+        .sort((a, b) => parseFloat(b.timestamp) - parseFloat(a.timestamp))
+        .map(question => {
 
         const imgUrl = users[question.author].avatarURL
         return (

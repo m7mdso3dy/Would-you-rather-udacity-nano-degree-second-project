@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from "react"
 import UnAnsweredQuestion from "../comps/Questions Comps/UnAnsweredQuestion";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import AnsweredQuestion from "../comps/Questions Comps/AnsweredQuestion";
@@ -10,17 +10,22 @@ const QuestionDetail = props => {
     const [userChoise, setUserChoise] = useState('');
     const questions = useSelector(state => state.questions);
     const authedUser = useSelector(state => state.authedUser.authedUser);
-    const { questionId } = useParams();
+    const { question_id } = useParams();
+    
     useEffect(() => {
-        if (questions[questionId].optionOne.votes.includes(authedUser)) {
+        if (!questions[question_id]) {
+            console.log('this the shit where we are')
+        return(<Navigate to='*'></Navigate>)
+    }
+        if (questions[question_id].optionOne.votes.includes(authedUser)) {
             setAnswered(true);
-            setUserChoise(questions[questionId].optionOne.text);
+            setUserChoise(questions[question_id].optionOne.text);
         }
-        if (questions[questionId].optionTwo.votes.includes(authedUser)) {
+        if (questions[question_id].optionTwo.votes.includes(authedUser)) {
             setAnswered(true);
-            setUserChoise(questions[questionId].optionTwo.text);
+            setUserChoise(questions[question_id].optionTwo.text);
         }
-    }, [answered, userChoise,authedUser,questionId,questions]);
+    }, [answered, userChoise,authedUser,question_id,questions]);
     
 
     const changeAnswerStateHandler = () => {
@@ -28,25 +33,26 @@ const QuestionDetail = props => {
     }
     return (
         <Fragment>
-            {!answered && <UnAnsweredQuestion
-                id={questionId}
-                optionOne={questions[questionId].optionOne.text}
-                optionTwo={questions[questionId].optionTwo.text}
-                changeAnswerStateHandler={changeAnswerStateHandler}
-                authedUser = {authedUser}
+
+            {!answered && questions[question_id] &&
+                <UnAnsweredQuestion
+                    id={question_id}
+                    optionOne={questions[question_id].optionOne.text}
+                    optionTwo={questions[question_id].optionTwo.text}
+                    changeAnswerStateHandler={changeAnswerStateHandler}
+                    authedUser = {authedUser}
             ></UnAnsweredQuestion>}
-            {answered && 
+            {answered && questions[question_id] &&
                 <AnsweredQuestion
-                    optionOne={questions[questionId].optionOne.text}
-                    optionTwo={questions[questionId].optionTwo.text}
+                    optionOne={questions[question_id].optionOne.text}
+                    optionTwo={questions[question_id].optionTwo.text}
                     userChoise={userChoise}
-                    optionOneVotes={questions[questionId].optionOne.votes.length}
-                    optionTwoVotes={questions[questionId].optionTwo.votes.length}
-                    totalVotes = {questions[questionId].optionOne.votes.length + questions[questionId].optionTwo.votes.length}
+                    optionOneVotes={questions[question_id].optionOne.votes.length}
+                    optionTwoVotes={questions[question_id].optionTwo.votes.length}
+                    totalVotes = {questions[question_id].optionOne.votes.length + questions[question_id].optionTwo.votes.length}
                 >
 
-                </AnsweredQuestion>
-            }
+                </AnsweredQuestion>}
         </Fragment>
     )
 }

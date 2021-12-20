@@ -4,13 +4,16 @@ import { useDispatch } from "react-redux";
 import { authUserActions } from "../store/auth-user-slice";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 const Login = props => {
+    const { state:sttttttttt } = useLocation();
     const userRef = useRef();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const signInHandler = () => {
         dispatch(authUserActions.authUser(userRef.current.value));
         navigate('/');
+         navigate(sttttttttt?.path || "/");
 
     }
     return (
