@@ -14,7 +14,8 @@ then Run npm start to start the project running on port 3000 (if 3000 is not tak
 Quich setup : 
 1. download project or clone the repo 
 2. cd the project folder 
-3. run npm install 4. run npm start
+3. run npm install 
+4. run npm start
 
 More details :
 this project was created using :
