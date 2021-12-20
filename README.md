@@ -11,7 +11,7 @@ cd to the folder you stored your project at
 Run npm install to install all dependencies.
 then Run npm start to start the project running on port 3000 (if 3000 is not taken by anthor service).
 
-Quich setup : 
+Quick setup : 
 1. download project or clone the repo 
 2. cd the project folder 
 3. run npm install 
