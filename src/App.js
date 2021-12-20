@@ -7,28 +7,32 @@ import LeaderBored from './pages/LeaderBored';
 import QuestionDetail from './pages/QuestionDetail';
 import { useSelector } from 'react-redux';
 import Login from './pages/Login';
-import { Nav, NavItem } from 'react-bootstrap';
+import { Nav, Navbar,Container } from 'react-bootstrap';
+import UserStatus from './comps/Users Comps/UserStatus';
+import { Fragment } from 'react';
 
 function App() {
   const authedUser = useSelector(state => state.authedUser.authedUser);
   return (
-    <div className = 'container  py-5'>
+    <Fragment>
       {
         authedUser &&
-        <Nav className="justify-content-center py-5" activeKey="/home">
-          <NavItem>
-            <Nav.Link as={Link} to='/home'> Home</Nav.Link>
-          </NavItem>
-          <NavItem eventkey={1} href="/add">
+          <Navbar sticky="top" bg="light" expand="md" className='mb-5 py-4'>
+            <Container>
+              <Navbar.Brand href="#home">Would You Rather</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mx-auto">
+                  <Nav.Link as={Link} to='/home'> Home</Nav.Link>
                   <Nav.Link as={Link} to="/add" >Add New Question</Nav.Link>
-          </NavItem>
-          <NavItem eventkey={2} href="/leaderBored">
                   <Nav.Link as={Link} to="/leaderBored" >Leader Bored</Nav.Link>
-          </NavItem>   
-        </Nav>
+                </Nav>
+                <UserStatus/>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>      
       }
-      
-      
+    <div className = 'container  py-5'>
       <Routes>
         
         <Route path='/' element={
@@ -58,10 +62,14 @@ function App() {
             <Login></Login>)||<Navigate to='/home'></Navigate>
           }>
           </Route>
+          <Route path='*' element={
+            (!authedUser &&
+            <Login></Login>)||<Navigate to='/home'></Navigate>
+          }></Route>
       </Routes>
         
     </div>
-    
+  </Fragment>
   )
 }
 

@@ -48,7 +48,7 @@ const usersSlice = createSlice({
             //action => {user id,question id , vote option}
             //add answer for new question
             
-            state.action.payload.userId.answers.action.payload.questionId = action.payload.voteOption;
+            state[action.payload.userId].answers[action.payload.questionId] = [action.payload.voteOption];
             
         },
         addNewCreatedQuestion(state, action) {

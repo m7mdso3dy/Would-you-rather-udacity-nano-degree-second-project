@@ -10,6 +10,9 @@ const authUserSlice = createSlice({
     reducers: {
         authUser(state, action) {
             state.authedUser = action.payload;
+        },
+        logout(state) {
+            state.authedUser = null;
         }
     }
 });

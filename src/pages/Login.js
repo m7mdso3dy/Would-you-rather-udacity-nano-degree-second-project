@@ -19,7 +19,7 @@ const Login = props => {
                 <div className="col-lg-6 d-flex flex-column ">
                     <Form.Select aria-label="Default select example" ref={userRef} >
                         <option disabled>chosse user Name</option>
-                        <option value="1sarahedo">Sarah Edo</option>
+                        <option value="sarahedo">Sarah Edo</option>
                         <option value="tylermcginnis">Tyler McGinnis</option>
                         <option value="johndoe">John Doe</option>
                     </Form.Select>

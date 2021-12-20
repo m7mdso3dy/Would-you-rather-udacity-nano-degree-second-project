@@ -111,7 +111,11 @@ const questionsSlice = createSlice({
             // action .payload => {question id , currently user id , vote option}
             //target the question key with the question id then access the vote option key with vote option value sent in args 
             //then push user id in the votes array of that option
-            state.action.payload.questionId.action.payload.voteOption.votes.push(action.payload.userId);
+          const id = action.payload.questionId;
+          const voteOption = action.payload.voteOption;
+          const userId = action.payload.userId;
+          state[id][voteOption]['votes'].push(userId);
+          
 
         }
     }

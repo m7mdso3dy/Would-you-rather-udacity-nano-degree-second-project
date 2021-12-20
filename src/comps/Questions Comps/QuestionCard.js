@@ -11,7 +11,7 @@ const QuestionCard = props => {
                     or <br />
                     {props.optionTwo}
                 </Card.Text>
-                <Button variant="primary"> <Link className="text-white btn" to={`/question/${props.questionId}`}>view Question</Link> </Button>
+                <Button variant="primary"> <Link className="text-white btn" to={`/question/${props.id}`}>view Question</Link> </Button>
             </Card.Body>
         </Card>
     )
