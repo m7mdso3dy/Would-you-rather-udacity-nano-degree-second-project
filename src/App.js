@@ -25,7 +25,7 @@ function App() {
                 <Nav className="mx-auto">
                   <Nav.Link as={Link} to='/home'> Home</Nav.Link>
                   <Nav.Link as={Link} to="/add" >Add New Question</Nav.Link>
-                  <Nav.Link as={Link} to="/leaderBored" >Leader Bored</Nav.Link>
+                  <Nav.Link as={Link} to="/leaderboard" >Leader Bored</Nav.Link>
                 </Nav>
                 <UserStatus/>
               </Navbar.Collapse>
